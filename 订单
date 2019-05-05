@@ -1,0 +1,31 @@
+< form id = “ main ” v-cloak > < h1 > 服务</ h1 > < ul > <！ - 循环输出服务数组，设置选项点击后的样式- > < li v-for = “ 服务中的服务“ v-on：click = ” toggleActive（service）“ v-bind：class = ” {'active'：service.active} “ > <！ - 显示订单中的服务名，价格Vue.js定义了货币过滤器，用于格式化价格- >
+ 
+            {{服务名称}}  
+ 
+    
+ 
+    
+ 
+        
+ 
+           
+ 
+            < span > {{service.price | 货币}} </ span > </ li > </ ul > < div class = “ total ” > <！ - 计算所有服务的价格，并格式化货币- > 
+ 
+        总计：< span > {{total（） | currency}} </ span > </ div > </ form > < script >
+ 
+        
+    
+ 
+     
+ 
+        
+        
+    
+ 
+
+
+ 
+//自定义过滤器“currency”。Vue.filter（'currency'，function（value）{return'$'+ value.toFixed（2）;}）; var demo = new Vue（{el：'＃main'，data：{//定义模型属性模型属性。视图将循环//视图将循环输出数组的数据服务：[{name：'Web Development'，价格：300，有效：真}，{名称：'设计'，价格：400，有效：假}，{名称：'整合'，价格：250，有效：假}，{名称：'培训'，价格： 220，active：false}]}，方法：{toggleActive：function（s）{s。active =！s.active; }，total：function（）{var total = 0; this.services.forEach（function（s）{if（s.active）{total + = s.price;}}）; 返回总数; }}};
+    
+</ script >
